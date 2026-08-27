@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hayeong Ryu</title>
+    <meta name="author" content="Hayeong Ryu" />
+    <meta name="description" content="Hayeong Ryu's personal website." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤗</text></svg>" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+
+    <style>
+      body {
+        max-width: 960px;
+        padding: 40px 20px 60px;
+        margin: 0 auto;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 375;
+        font-size: 15px;
+        background-color: #fdfdfd;
+        color: #1a1a1a;
+        line-height: 1.4;
+      }
+
+      strong { font-weight: 500; }
+
+      h1 { margin: 0; line-height: 1.15; font-weight: 500; font-size: 1.75em; }
+
+      h2 {
+        border-bottom: 1px solid #ddd;
+        margin: 1.4em 0 0.2em;
+        padding-bottom: 4px;
+        font-weight: 500;
+      }
+
+      h2:first-child { margin-top: 0; }
+
+      a { color: #1772d0; text-decoration: none; }
+      a:hover { color: #f09228; }
+
+      /* Two-column layout: sidebar left, content right */
+      .layout {
+        display: flex;
+        align-items: flex-start;
+        gap: 46px;
+      }
+
+      .sidebar {
+        flex: 0 0 220px;
+        width: 220px;
+        position: sticky;
+        top: 40px;
+        text-align: center;
+      }
+
+      .sidebar .photo img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center 22%;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .sidebar h1 { margin-top: 18px; }
+      .sidebar .role { margin: 6px 0 0; color: #444; font-size: 0.95em; }
+      .sidebar .icons { margin-top: 12px; font-size: 0; }
+      .sidebar .icons a { font-size: 22px; margin: 0 7px; }
+      .sidebar .contact { margin-top: 10px; font-size: 0.9em; word-break: break-word; }
+      .sidebar .affil { margin-top: 10px; font-size: 0.88em; color: #777; line-height: 1.5; }
+
+      .content { flex: 1 1 auto; min-width: 0; }
+
+      /* About */
+      .about p { text-align: justify; margin: 8px 0; }
+
+      /* Honors / Services / Skills */
+      .entries p { margin: 5px 0; }
+
+      /* Education & Experience */
+      .exp-item { display: flex; align-items: center; gap: 20px; margin: 18px 0; }
+      .exp-item .logo {
+        flex: 0 0 44px; width: 44px; height: 44px;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .exp-item .logo img { max-width: 44px; max-height: 28px; object-fit: contain; }
+      .exp-item .logo i { font-size: 28px; color: #111; }
+      .exp-item .role { font-weight: 500; }
+      .exp-item .meta { color: #777; font-size: 0.9em; margin-top: 2px; }
+
+      /* Publications */
+      .pub-toggle { display: flex; gap: 8px; margin: 12px 0 6px; }
+      .pub-btn {
+        border: 1px solid #ddd; background: #fff; padding: 6px 12px;
+        border-radius: 8px; cursor: pointer; font-family: inherit;
+        font-weight: 450; font-size: 0.9em; color: #333;
+      }
+      .pub-btn.active {
+        border-color: #1772d0; color: #1772d0;
+        box-shadow: 0 0 0 2px rgba(23, 114, 208, 0.12) inset;
+      }
+      .pub-item { margin: 12px 0; }
+      .pub-item .title { font-weight: 500; }
+      .venue { font-weight: 500; }
+      .review { color: #999; font-weight: 375; }
+      .highlight { color: #f09228; font-weight: 500; }
+
+      /* Projects */
+      .proj-item { margin: 12px 0; }
+      .proj-item .name { font-weight: 500; }
+      .proj-item .meta { color: #777; font-size: 0.9em; margin-top: 1px; }
+      .proj-item .desc { margin-top: 2px; }
+
+      /* Skills */
+      .skills { border-collapse: collapse; margin: 8px 0; }
+      .skills th {
+        text-align: left; font-weight: 500; color: #777;
+        padding: 4px 18px 4px 0; vertical-align: top; white-space: nowrap;
+      }
+      .skills td { padding: 4px 0; vertical-align: top; }
+
+      @media (max-width: 720px) {
+        .layout { flex-direction: column; align-items: center; gap: 22px; }
+        .sidebar { position: static; flex-basis: auto; width: 60%; max-width: 240px; }
+        .content { width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="photo">
+          <img src="assets/img/profile.jpg" alt="Hayeong Ryu" />
+        </div>
+        <h1>Hayeong Ryu</h1>
+        <p class="role">M.S. Student, Chung-Ang University</p>
+        <div class="icons">
+          <a href="mailto:bluebarry37@cau.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/Hayeonggg" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/hayeongryu/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="assets/pdf/hayeong_ryu_cv.pdf" title="CV"><i class="ai ai-cv"></i></a>
+        </div>
+        <div class="contact">bluebarry37 [at] cau.ac.kr</div>
+        <div class="affil">
+          Intelligent Information<br />Processing Lab (IIPL)<br />Seoul, Korea
+        </div>
+      </aside>
+
+      <main class="content">
+        <h2>About</h2>
+        <div class="about">
+          <p>
+            Hi! I am Hayeong Ryu, an M.S. student in Artificial Intelligence at
+            Chung-Ang University, where I am a research assistant in the
+            <a href="https://sites.google.com/view/iiplcau">Intelligent Information Processing Lab (IIPL)</a>,
+            advised by Professor
+            <a href="https://sites.google.com/view/iiplcau/professor">YoungBin Kim</a>.
+            I received my B.S. in Computer Science and Engineering from Seokyeong University.
+            Here is my <a href="assets/pdf/hayeong_ryu_cv.pdf">CV</a>.
+          </p>
+          <p>
+            My research interests lie in natural language processing, trustworthy AI,
+            and large language models. I work on making LLMs and vision-language models
+            more faithful to what they actually know &mdash; detecting and mitigating
+            hallucination through internal signals and decoding-time intervention,
+            factual knowledge distillation, and evaluation methods that measure
+            outcomes rather than surface edits.
+          </p>
+        </div>
+
+        <h2>Education</h2>
+        <div class="experience">
+          <div class="exp-item">
+            <div class="logo"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <div class="role">M.S. in Artificial Intelligence, Chung-Ang University</div>
+              <div class="meta">Mar. 2025 &ndash; Feb. 2027 &middot; Seoul, Korea &middot; GPA 4.44 / 4.5</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="logo"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <div class="role">B.S. in Computer Science and Engineering, Seokyeong University</div>
+              <div class="meta">Mar. 2020 &ndash; Feb. 2025 &middot; Seoul, Korea &middot; GPA 4.05 / 4.5</div>
+            </div>
+          </div>
+        </div>
+
+        <h2>Experience</h2>
+        <div class="experience">
+          <div class="exp-item">
+            <div class="logo"><i class="fas fa-flask"></i></div>
+            <div>
+              <div class="role">Research Assistant, Intelligent Information Processing Lab</div>
+              <div class="meta">Mar. 2025 &ndash; Feb. 2027 &middot; Chung-Ang University &middot; Advisor: YoungBin Kim</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="logo"><i class="fas fa-flask"></i></div>
+            <div>
+              <div class="role">Undergraduate Intern, Intelligent Information Processing Lab</div>
+              <div class="meta">Jul. 2024 &ndash; Feb. 2025 &middot; Chung-Ang University &middot; Advisor: YoungBin Kim</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="logo"><i class="fas fa-flask"></i></div>
+            <div>
+              <div class="role">Undergraduate Researcher, RACS Lab</div>
+              <div class="meta">Mar. 2022 &ndash; Jul. 2024 &middot; Seokyeong University &middot; Advisor: Youngwan Cho</div>
+            </div>
+          </div>
+        </div>
+
+        <h2>International Publications</h2>
+        <div class="pub-toggle" role="tablist" aria-label="Publications filter">
+          <button id="btn-selected" class="pub-btn active" role="tab" aria-selected="true">Selected</button>
+          <button id="btn-all" class="pub-btn" role="tab" aria-selected="false">All</button>
+        </div>
+        <p style="font-size: 0.85em; color: #888; margin: 4px 0">* denotes equal contribution</p>
+
+        <div id="pub-list">
+          <div class="pub-item selected">
+            <div class="title">Beyond Safe Answers: Segment-Aware Listwise Alignment for Reasoning Safety in Large Reasoning Models</div>
+            JungMin Yun, Junehyoung Kwon, <u>Hayeong Ryu</u>, Byeonggeuk Lim, Hoejoon Kwon, YoungBin Kim<br />
+            <span class="venue">EMNLP 2026</span> (Main Conference)
+          </div>
+
+          <div class="pub-item selected">
+            <div class="title">Don&rsquo;t Count the Edits, Judge by the Outcome Alone: Reward-Based Evaluation for Grammatical Error Correction</div>
+            <u>Hayeong Ryu</u>, Sunhee Jo, Seunguk Yu, YoungBin Kim<br />
+            <span class="venue">EMNLP 2026</span> (Findings)
+          </div>
+
+          <div class="pub-item selected">
+            <div class="title">Look Before You Leap: Factual Decoding with Internal Attribution Signals</div>
+            <u>Hayeong Ryu</u>, JungMin Yun, Byeonggeuk Lim, Sunhee Jo, YoungBin Kim<br />
+            <span class="venue">EMNLP 2026</span> (Findings)
+          </div>
+
+          <div class="pub-item selected">
+            <div class="title">Fidelity Assessment of Large Language Models across Cross-domain Benchmarks</div>
+            Seunguk Yu, <u>Hayeong Ryu</u>, SeungHoo Lee, YoungBin Kim<br />
+            <span class="venue">PAKDD 2026 Workshop</span><br />
+            <a href="https://link.springer.com/book/10.1007/978-981-92-2014-4">paper</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Mitigating Visual Context Hallucination in LVLMs</div>
+            Byeonggeuk Lim, Junehyoung Kwon, JungMin Yun, <u>Hayeong Ryu</u>, YoungBin Kim<br />
+            <span class="venue">AAAI 2027</span> <span class="review">(under review)</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Background-Aware Negative Separation for Zero-Shot OOD Detection</div>
+            Kahyeon Kim, Eunju Lee, Keunhyeung Park, Junehyoung Kwon, Yoonji Lee, <u>Hayeong Ryu</u>, YoungBin Kim<br />
+            <span class="venue">WACV 2027</span> <span class="review">(under review)</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Evaluating Anachronistic Hallucination in Large Vision-Language Models</div>
+            Keunhyeung Park, Byeonggeuk Lim, Kahyeon Kim, Sunhee Jo, <u>Hayeong Ryu</u>, Hoejoon Kwon, Jinhee Jang, YoungBin Kim<br />
+            <span class="venue">WACV 2027</span> <span class="review">(under review)</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Dynamic Evidence-Guided Decoding for Action Hallucination Mitigation in VideoLLMs</div>
+            Sunhee Jo, Junehyoung Kwon, Byeonggeuk Lim, Kyeonghyun Kim, <u>Hayeong Ryu</u>, YoungBin Kim<br />
+            <span class="venue">NAACL 2027</span> <span class="review">(under review)</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Dynamic Trajectory for Token-Level Early Warning of Hallucination Detection</div>
+            <u>Hayeong Ryu</u>, JungMin Yun, Sunhee Jo, Kyeonghyun Kim, YoungBin Kim<br />
+            <span class="venue">NAACL 2027</span> <span class="review">(under review)</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Student-Aware Factual Knowledge Distillation</div>
+            <u>Hayeong Ryu</u>, Sunhee Jo, YoungBin Kim<br />
+            <span class="venue">NAACL 2027</span> <span class="review">(under review)</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">Data-driven Framework for Stable Nozzle Arrangement under Limited Industrial Flow Data</div>
+            Seunguk Yu, Jinhee Jang, <u>Hayeong Ryu</u>, Hongyoung Kim, Heesue Jeong, YoungBin Kim<br />
+            <span class="venue">IEEE Access 2026</span> <span class="review">(under review)</span>
+          </div>
+        </div>
+
+        <h2>Domestic Publications</h2>
+        <div>
+          <div class="pub-item">
+            <div class="title">배경 인식 Negative Label 분리를 이용한 CLIP 기반 Zero-shot OOD 탐지 방법</div>
+            Kahyeon Kim, Eunju Lee, Keunhyeung Park, Junehyoung Kwon, Yoonji Lee, <u>Hayeong Ryu</u>, YoungBin Kim<br />
+            <span class="venue">Joint Conference on Communications and Information 2026</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">프레임 간 시간적 유사도에 기반한 동적 패치 유도 디코딩 기법을 활용한 비디오 동작 환각 완화</div>
+            Sunhee Jo, Junehyoung Kwon, Byeonggeuk Lim, Kyeonghyun Kim, <u>Hayeong Ryu</u>, YoungBin Kim<br />
+            <span class="venue">Joint Conference on Communications and Information 2026</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">어순 변형을 통한 한국어 질의응답 모델의 의미 이해 강화</div>
+            <u>Hayeong Ryu</u>, YoungBin Kim<br />
+            <span class="venue">HCLT-KACL 2025</span>
+          </div>
+
+          <div class="pub-item">
+            <div class="title">다중 LLM 응답과 이중 정제를 통한 환각 탐지 데이터 생성 프레임워크</div>
+            <u>Hayeong Ryu</u>, Kyeonghyun Kim, Yeonghwa Kim, JuneHyoung Kwon, YoungBin Kim<br />
+            <span class="venue">Summer Annual Conference of IEIE 2025</span>
+          </div>
+        </div>
+
+        <h2>Research Projects</h2>
+        <div>
+          <div class="proj-item">
+            <div class="name">Teaching Assistant, Large Language Models</div>
+            <div class="meta">Chung-Ang University &middot; Mar. 2026 &ndash; Jun. 2026</div>
+            <div class="desc">Developed lecture materials and designed assignments for large language models.</div>
+          </div>
+          <div class="proj-item">
+            <div class="name">AI-based Design Automation Tool Development</div>
+            <div class="meta">Industry Research Project &middot; Oct. 2025 &ndash; Jul. 2026</div>
+            <div class="desc">Developed data augmentation pipelines for model training.</div>
+          </div>
+          <div class="proj-item">
+            <div class="name">Teaching Assistant, Advanced Deep Learning for NLP</div>
+            <div class="meta">Chung-Ang University &middot; Sep. 2025 &ndash; Oct. 2025</div>
+            <div class="desc">Led hands-on labs on fine-tuning pre-trained models and optimization techniques.</div>
+          </div>
+          <div class="proj-item">
+            <div class="name">Teaching Assistant, Open Source Software Project</div>
+            <div class="meta">Chung-Ang University &middot; Mar. 2025 &ndash; Jun. 2025</div>
+            <div class="desc">Developed and organized lecture materials on open-source methodologies.</div>
+          </div>
+        </div>
+
+        <h2>Academic Projects</h2>
+        <div>
+          <div class="proj-item">
+            <div class="name">ChatGPT-based AI Voice Assistant for Visually Impaired</div>
+            <div class="meta">Mar. 2024 &ndash; Dec. 2024</div>
+            <div class="desc">
+              Developed a multimodal AI voice assistant integrating vision and speech.
+              <a href="https://github.com/Hayeonggg/hanium-2024">code</a><br />
+              <span class="highlight">Bronze Prize</span>, ICT Mentoring (한국정보방송통신대연합회장상)
+            </div>
+          </div>
+          <div class="proj-item">
+            <div class="name">Personality Analysis using LSTM and Bi-LSTM</div>
+            <div class="meta">Nov. 2023</div>
+            <div class="desc">
+              <span class="highlight">Best Poster</span>, The Society of Convergence Knowledge Fall Conference
+            </div>
+          </div>
+          <div class="proj-item">
+            <div class="name">MBTI Analysis via Deep Learning-based NLP</div>
+            <div class="meta">Capstone Design &middot; Aug. 2023 &ndash; Nov. 2023</div>
+            <div class="desc">
+              NLP-based MBTI prediction using LSTM/Bi-LSTM with LLM-based data augmentation.
+              <a href="https://github.com/Hayeonggg/MBTI-Analysis-project">code</a>
+            </div>
+          </div>
+        </div>
+
+        <h2>Honors &amp; Awards</h2>
+        <div class="entries">
+          <p><strong>Bronze Prize</strong>, ICT Mentoring 2024 (한국정보방송통신대연합회장상)</p>
+          <p><strong>Best Poster</strong>, The Society of Convergence Knowledge Fall Conference 2023</p>
+        </div>
+
+        <h2>Academic Services</h2>
+        <div class="entries">
+          <p><strong>Conference Reviewer</strong>: WSDM 2026</p>
+        </div>
+
+        <h2>Skills</h2>
+        <table class="skills">
+          <tr>
+            <th>Languages</th>
+            <td>Korean (Native), English (Basic)</td>
+          </tr>
+          <tr>
+            <th>Programming</th>
+            <td>Python</td>
+          </tr>
+          <tr>
+            <th>Libraries &amp; Tools</th>
+            <td>PyTorch, HuggingFace Transformers, Pandas</td>
+          </tr>
+        </table>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        const btnSelected = document.getElementById('btn-selected');
+        const btnAll = document.getElementById('btn-all');
+        const items = Array.from(document.querySelectorAll('#pub-list .pub-item'));
+
+        function setView(view) {
+          const sel = view === 'selected';
+          items.forEach((el) => {
+            el.style.display = !sel || el.classList.contains('selected') ? '' : 'none';
+          });
+          btnSelected.classList.toggle('active', sel);
+          btnSelected.setAttribute('aria-selected', sel);
+          btnAll.classList.toggle('active', !sel);
+          btnAll.setAttribute('aria-selected', !sel);
+          try {
+            const url = new URL(window.location);
+            url.searchParams.set('view', view);
+            history.replaceState({}, '', url);
+          } catch (e) {
+            /* file:// may block history API; ignore */
+          }
+        }
+
+        btnSelected.addEventListener('click', () => setView('selected'));
+        btnAll.addEventListener('click', () => setView('all'));
+
+        const params = new URLSearchParams(window.location.search);
+        setView(params.get('view') === 'all' ? 'all' : 'selected');
+      })();
+    </script>
+  </body>
+</html>

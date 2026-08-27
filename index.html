@@ -53,22 +53,26 @@
         width: 190px;
         position: sticky;
         top: 40px;
-        text-align: center;
       }
 
       .sidebar .photo img {
         width: 100%;
-        max-width: 160px;
+        max-width: 140px;
         height: auto;
         display: block;
-        margin: 0 auto;
       }
 
       .sidebar h1 { margin-top: 16px; }
       .sidebar .role { margin: 6px 0 0; color: #444; font-size: 0.95em; line-height: 1.35; }
-      .sidebar .icons { margin-top: 12px; font-size: 0; }
-      .sidebar .icons a { font-size: 21px; margin: 0 6px; }
-      .sidebar .contact { margin-top: 10px; font-size: 0.9em; word-break: break-word; }
+
+      /* Sidebar link list: icon + label, one per row */
+      .sidebar .links { list-style: none; padding: 0; margin: 16px 0 0; }
+      .sidebar .links li { margin: 9px 0; font-size: 0.95em; }
+      .sidebar .links a { display: flex; align-items: center; gap: 10px; }
+      .sidebar .links i {
+        flex: 0 0 18px; width: 18px;
+        text-align: center; font-size: 16px;
+      }
 
       .content { flex: 1 1 auto; min-width: 0; }
 
@@ -104,18 +108,9 @@
       .proj-item { margin: 12px 0; }
       .proj-item .name { font-weight: 500; }
       .proj-item .meta { color: #777; font-size: 0.9em; margin-top: 1px; }
-      .proj-item .desc { margin-top: 2px; }
-
-      /* Skills */
-      .skills { border-collapse: collapse; margin: 8px 0; }
-      .skills th {
-        text-align: left; font-weight: 500; color: #777;
-        padding: 4px 18px 4px 0; vertical-align: top; white-space: nowrap;
-      }
-      .skills td { padding: 4px 0; vertical-align: top; }
 
       @media (max-width: 720px) {
-        .layout { flex-direction: column; align-items: center; gap: 22px; }
+        .layout { flex-direction: column; align-items: flex-start; gap: 22px; }
         .sidebar { position: static; flex-basis: auto; width: 100%; }
         .content { width: 100%; }
       }
@@ -130,15 +125,14 @@
         </div>
         <h1>Hayeong Ryu</h1>
         <p class="role">M.S. Student,<br />Chung-Ang University</p>
-        <div class="icons">
+        <ul class="links">
+          <li><a href="mailto:bluebarry37@cau.ac.kr"><i class="fas fa-envelope"></i><span>Email</span></a></li>
           <!-- TODO: Google Scholar 프로필 주소를 href="" 안에 넣으세요 -->
-          <a href="" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-          <a href="mailto:bluebarry37@cau.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="https://github.com/Hayeonggg" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/hayeongryu/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="assets/pdf/hayeong_ryu_cv.pdf" title="CV"><i class="ai ai-cv"></i></a>
-        </div>
-        <div class="contact">bluebarry37 [at] cau.ac.kr</div>
+          <li><a href=""><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a></li>
+          <li><a href="https://github.com/Hayeonggg"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+          <li><a href="https://www.linkedin.com/in/hayeongryu/"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+          <li><a href="assets/pdf/hayeong_ryu_cv.pdf"><i class="ai ai-cv"></i><span>CV</span></a></li>
+        </ul>
       </aside>
 
       <main class="content">
@@ -176,10 +170,6 @@
 
         <h2>Experience</h2>
         <div class="experience">
-          <div class="exp-item">
-            <div class="role">Research Assistant, Intelligent Information Processing Lab</div>
-            <div class="meta">Mar. 2025 &ndash; Feb. 2027 &middot; Chung-Ang University &middot; Advisor: YoungBin Kim</div>
-          </div>
           <div class="exp-item">
             <div class="role">Undergraduate Intern, Intelligent Information Processing Lab</div>
             <div class="meta">Jul. 2024 &ndash; Feb. 2025 &middot; Chung-Ang University &middot; Advisor: YoungBin Kim</div>
@@ -237,19 +227,19 @@
           <div class="pub-item">
             <div class="title">Beyond Safe Answers: Segment-Aware Listwise Alignment for Reasoning Safety in Large Reasoning Models</div>
             JungMin Yun, Junehyoung Kwon, <u>Hayeong Ryu</u>, Byeonggeuk Lim, Hoejoon Kwon, YoungBin Kim<br />
-            <span class="venue">EMNLP 2026</span> (Main Conference)
+            <span class="venue">EMNLP 2026</span> Main Conference
           </div>
 
           <div class="pub-item selected">
             <div class="title">Don&rsquo;t Count the Edits, Judge by the Outcome Alone: Reward-Based Evaluation for Grammatical Error Correction</div>
             <u>Hayeong Ryu</u>, Sunhee Jo, Seunguk Yu, YoungBin Kim<br />
-            <span class="venue">EMNLP 2026</span> (Findings)
+            <span class="venue">EMNLP 2026</span> Findings
           </div>
 
           <div class="pub-item selected">
             <div class="title">Look Before You Leap: Factual Decoding with Internal Attribution Signals</div>
             <u>Hayeong Ryu</u>, JungMin Yun, Byeonggeuk Lim, Sunhee Jo, YoungBin Kim<br />
-            <span class="venue">EMNLP 2026</span> (Findings)
+            <span class="venue">EMNLP 2026</span> Findings
           </div>
 
           <div class="pub-item">
@@ -261,7 +251,7 @@
           <div class="pub-item">
             <div class="title">Fidelity Assessment of Large Language Models across Cross-domain Benchmarks</div>
             Seunguk Yu, <u>Hayeong Ryu</u>, SeungHoo Lee, YoungBin Kim<br />
-            <span class="venue">PAKDD 2026 Workshop</span><br />
+            <span class="venue">PAKDD 2026 Workshop on Applications of Foundation Models for Data Mining (RAFDA)</span><br />
             <a href="https://link.springer.com/book/10.1007/978-981-92-2014-4">paper</a>
           </div>
         </div>
@@ -298,22 +288,18 @@
           <div class="proj-item">
             <div class="name">Teaching Assistant, Large Language Models</div>
             <div class="meta">Chung-Ang University &middot; Mar. 2026 &ndash; Jun. 2026</div>
-            <div class="desc">Developed lecture materials and designed assignments for large language models.</div>
           </div>
           <div class="proj-item">
             <div class="name">AI-based Design Automation Tool Development</div>
             <div class="meta">Industry Research Project &middot; Oct. 2025 &ndash; Jul. 2026</div>
-            <div class="desc">Developed data augmentation pipelines for model training.</div>
           </div>
           <div class="proj-item">
             <div class="name">Teaching Assistant, Advanced Deep Learning for NLP</div>
             <div class="meta">Chung-Ang University &middot; Sep. 2025 &ndash; Oct. 2025</div>
-            <div class="desc">Led hands-on labs on fine-tuning pre-trained models and optimization techniques.</div>
           </div>
           <div class="proj-item">
             <div class="name">Teaching Assistant, Open Source Software Project</div>
             <div class="meta">Chung-Ang University &middot; Mar. 2025 &ndash; Jun. 2025</div>
-            <div class="desc">Developed and organized lecture materials on open-source methodologies.</div>
           </div>
         </div>
 
@@ -327,22 +313,6 @@
         <div class="entries">
           <p><strong>Conference Reviewer</strong>: WSDM 2026</p>
         </div>
-
-        <h2>Skills</h2>
-        <table class="skills">
-          <tr>
-            <th>Languages</th>
-            <td>Korean (Native), English (Basic)</td>
-          </tr>
-          <tr>
-            <th>Programming</th>
-            <td>Python</td>
-          </tr>
-          <tr>
-            <th>Libraries &amp; Tools</th>
-            <td>PyTorch, HuggingFace Transformers, Pandas</td>
-          </tr>
-        </table>
       </main>
     </div>
 

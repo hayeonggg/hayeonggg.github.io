@@ -170,7 +170,7 @@
 
         <h2>International Publications</h2>
         <div class="pub-toggle" role="tablist" aria-label="Publications filter">
-          <button id="btn-selected" class="pub-btn active" role="tab" aria-selected="true">Selected</button>
+          <button id="btn-selected" class="pub-btn active" role="tab" aria-selected="true">First-author</button>
           <button id="btn-all" class="pub-btn" role="tab" aria-selected="false">All</button>
         </div>
         <p style="font-size: 0.85em; color: #888; margin: 4px 0">* denotes equal contribution</p>
@@ -344,7 +344,7 @@
         btnAll.addEventListener('click', () => setView('all'));
 
         const params = new URLSearchParams(window.location.search);
-        setView(params.get('view') === 'all' ? 'all' : 'selected');
+        setView(params.get('view') === 'selected' ? 'selected' : 'all');
       })();
     </script>
   </body>

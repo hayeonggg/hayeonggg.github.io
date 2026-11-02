@@ -19,7 +19,21 @@
         .meta { color: #6c757d; }
         .review { color: #999; }
         .note { font-size: 0.875em; color: #888; }
-        #news ul { max-height: 120px; overflow-y: auto; }
+        /* News */
+        #news ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        #news li {
+            margin-bottom: 1.2em;
+        }
+        
+        #news .news-date {
+            font-weight: 700;
+            margin-right: 10px;
+        }
         .pub-toggle { margin-bottom: 0.75rem; }
         .pub-toggle .btn { font-size: 0.85em; }
         .contact-links {text-align: center;}
@@ -38,6 +52,11 @@
         #pub-list .pub-item strong {
             text-decoration: underline;
             text-underline-offset: 2px;
+        }
+        /* Section headings */
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
         }
         
         /* 논문 제목 더 굵게 */
@@ -94,8 +113,15 @@
             <div class="col">
                 <h2>News</h2>
                 <ul>
-                    <li>(Nov 2026) I started a research internship at <a href="https://www.lgresearch.ai/" target="_blank">LG AI Research</a>'s EXAONE Lab.</li>
-                    <li>(Aug 2026) Two paper accepted at EMNLP Findings 2026!</li>
+                    <li>
+                        <span class="news-date">Nov 2026</span>
+                        I started a research internship at
+                        <a href="https://www.lgresearch.ai/" target="_blank">LG AI Research</a>'s EXAONE Lab.
+                    </li>
+                    <li>
+                        <span class="news-date">Aug 2026</span>
+                        Two papers were accepted to EMNLP 2026 (Findings)!
+                    </li>
                 </ul>
             </div>
         </div>
